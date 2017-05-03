@@ -1,0 +1,1837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.1" jmeter="3.1 r1770033">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="TestPlan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="TestPlan" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="Step up load to 100 RPS" enabled="true">
+        <collectionProp name="load_profile">
+          <collectionProp name="140469690">
+            <stringProp name="49">1</stringProp>
+            <stringProp name="54">6</stringProp>
+            <stringProp name="1629">30</stringProp>
+          </collectionProp>
+          <collectionProp name="1363835306">
+            <stringProp name="54">6</stringProp>
+            <stringProp name="48631">106</stringProp>
+            <stringProp name="1722">60</stringProp>
+          </collectionProp>
+          <collectionProp name="1224230885">
+            <stringProp name="48631">106</stringProp>
+            <stringProp name="48631">106</stringProp>
+            <stringProp name="1572771">3600</stringProp>
+          </collectionProp>
+          <collectionProp name="-618872195">
+            <stringProp name="48631">106</stringProp>
+            <stringProp name="49">1</stringProp>
+            <stringProp name="1722">60</stringProp>
+          </collectionProp>
+        </collectionProp>
+      </kg.apc.jmeter.timers.VariableThroughputTimer>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="hostUrl" elementType="Argument">
+            <stringProp name="Argument.name">hostUrl</stringProp>
+            <stringProp name="Argument.value">${__P(HostUrl, master-staging3.intellify.io)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Host Url - Default is </stringProp>
+          </elementProp>
+          <elementProp name="username" elementType="Argument">
+            <stringProp name="Argument.name">username</stringProp>
+            <stringProp name="Argument.value">aws_loadtest</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Designer User Name</stringProp>
+          </elementProp>
+          <elementProp name="passwordMain" elementType="Argument">
+            <stringProp name="Argument.name">passwordMain</stringProp>
+            <stringProp name="Argument.value">AWSload@123</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Designer Password</stringProp>
+          </elementProp>
+          <elementProp name="orgUUID" elementType="Argument">
+            <stringProp name="Argument.name">orgUUID</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Organization UUID</stringProp>
+          </elementProp>
+          <elementProp name="dataCollectionName" elementType="Argument">
+            <stringProp name="Argument.name">dataCollectionName</stringProp>
+            <stringProp name="Argument.value">AWS_DC_${__time(dd_MM_yyyy_hh_mm_ss)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Data Collection Name</stringProp>
+          </elementProp>
+          <elementProp name="dataSourceName" elementType="Argument">
+            <stringProp name="Argument.name">dataSourceName</stringProp>
+            <stringProp name="Argument.value">AWS_DS_${__time(dd_MM_yyyy_hh_mm_ss)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Data Source Name</stringProp>
+          </elementProp>
+          <elementProp name="noOfDC" elementType="Argument">
+            <stringProp name="Argument.name">noOfDC</stringProp>
+            <stringProp name="Argument.value">${__P(NoOfDC, 1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">No of Data Collection to create</stringProp>
+          </elementProp>
+          <elementProp name="noOfDS" elementType="Argument">
+            <stringProp name="Argument.name">noOfDS</stringProp>
+            <stringProp name="Argument.value">${__P(NoOfDS, 1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">No of Data Source to create</stringProp>
+          </elementProp>
+          <elementProp name="sensorId" elementType="Argument">
+            <stringProp name="Argument.name">sensorId</stringProp>
+            <stringProp name="Argument.value">com.aws.load.test.id.${__P(SensorId1, ${__time(dd.MM.yyyy.hh.mm.ss)})}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Sensor Id </stringProp>
+          </elementProp>
+          <elementProp name="eventId" elementType="Argument">
+            <stringProp name="Argument.name">eventId</stringProp>
+            <stringProp name="Argument.value">com-aws-load-test-event-${__time(dd-MM-yyyy-hh-mm-ss)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Event Id</stringProp>
+          </elementProp>
+          <elementProp name="entityId" elementType="Argument">
+            <stringProp name="Argument.name">entityId</stringProp>
+            <stringProp name="Argument.value">com-aws-load-test-entity-${__time(dd-MM-yyyy-hh-mm-ss)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Entity Id</stringProp>
+          </elementProp>
+          <elementProp name="actorId" elementType="Argument">
+            <stringProp name="Argument.name">actorId</stringProp>
+            <stringProp name="Argument.value">actorId_${__time(dd_MM_yyyy_hh_mm_ss)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Actor Id to pass in Event/Entity Json data</stringProp>
+          </elementProp>
+          <elementProp name="computedStream" elementType="Argument">
+            <stringProp name="Argument.name">computedStream</stringProp>
+            <stringProp name="Argument.value">computed-${__time(dd-MM-yyyy-hh-mm-ss)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Computed stream Name (/intellisearch/${computedStream}-output/_search)</stringProp>
+          </elementProp>
+          <elementProp name="sizeOfData" elementType="Argument">
+            <stringProp name="Argument.name">sizeOfData</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Size(Number) of record to fatch </stringProp>
+          </elementProp>
+          <elementProp name="timeDiffPrev" elementType="Argument">
+            <stringProp name="Argument.name">timeDiffPrev</stringProp>
+            <stringProp name="Argument.value">0</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="path" elementType="Argument">
+            <stringProp name="Argument.name">path</stringProp>
+            <stringProp name="Argument.value">/jmeter/logs/</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">D:\Intellify\load_testing\</stringProp>
+          </elementProp>
+          <elementProp name="timeStamp" elementType="Argument">
+            <stringProp name="Argument.name">timeStamp</stringProp>
+            <stringProp name="Argument.value">${__javaScript(new Date().getTime();)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">${__time(/1000)}</stringProp>
+          </elementProp>
+          <elementProp name="totalNoOfRequest" elementType="Argument">
+            <stringProp name="Argument.name">totalNoOfRequest</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">${__P(totalEventRequestCount,)}</stringProp>
+          </elementProp>
+          <elementProp name="pauseTimeForProcessing" elementType="Argument">
+            <stringProp name="Argument.name">pauseTimeForProcessing</stringProp>
+            <stringProp name="Argument.value">300000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HttpRequestDefaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="HttpRequestDefaults" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">${hostUrl}</stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        <stringProp name="HTTPSampler.protocol">https</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path">/</stringProp>
+        <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="Cache" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="NoOfDataSourceCounter" enabled="true">
+        <stringProp name="CounterConfig.start">1</stringProp>
+        <stringProp name="CounterConfig.end">${noOfDS}</stringProp>
+        <stringProp name="CounterConfig.incr">1</stringProp>
+        <stringProp name="CounterConfig.name">count</stringProp>
+        <stringProp name="CounterConfig.format"></stringProp>
+        <boolProp name="CounterConfig.per_user">false</boolProp>
+      </CounterConfig>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.46 Safari/536.5</stringProp>
+          </elementProp>
+          <elementProp name="Content-Type" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+          <elementProp name="Accept-Encoding" elementType="Header">
+            <stringProp name="Header.name">Accept-Encoding</stringProp>
+            <stringProp name="Header.value">gzip, deflate</stringProp>
+          </elementProp>
+          <elementProp name="X-Requested-With" elementType="Header">
+            <stringProp name="Header.name">X-Requested-With</stringProp>
+            <stringProp name="Header.value">XMLHttpRequest</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Local testing" enabled="false">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Authorization</stringProp>
+            <stringProp name="Header.value">Bearer fc394c87a433bc3b861d6ff2fea0830458adca6721c883284cc80956da51ce603c79196b0b86152d7ba6bb391876accc3767d16632b67b163ef16b59e803a1fd</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Environment settings" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1491169972000</longProp>
+        <longProp name="ThreadGroup.end_time">1491169972000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+&quot;username&quot;: &quot;${username}&quot;,&#xd;
+&quot;password&quot;: &quot;${passwordMain}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/user/login</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Password Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">password1</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">password</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">props.put(&quot;password1&quot;,vars.get(&quot;password1&quot;));</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Data Collection Loop " enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">${noOfDC}</stringProp>
+        </LoopController>
+        <hashTree>
+          <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="NoOfDataSourceCounter" enabled="true">
+            <stringProp name="CounterConfig.start">1</stringProp>
+            <stringProp name="CounterConfig.end">${noOfDS}</stringProp>
+            <stringProp name="CounterConfig.incr">1</stringProp>
+            <stringProp name="CounterConfig.name">count</stringProp>
+            <stringProp name="CounterConfig.format"></stringProp>
+            <boolProp name="CounterConfig.per_user">false</boolProp>
+          </CounterConfig>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create Data Collection" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;apiKeys&quot;: [],&#xd;
+	&quot;dataSources&quot;: [],&#xd;
+	&quot;intelliStreams&quot;: [],&#xd;
+	&quot;intelliViews&quot;: [],&#xd;
+	&quot;parentOrgId&quot;: &quot;${orgUUID}&quot;,&#xd;
+	&quot;parentOrgLabel&quot;: &quot;AWS_Load_testing_DoNotDelete&quot;,&#xd;
+	&quot;name&quot;: &quot;${dataCollectionName}_${count}&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/datacollection</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${__P(password1,)}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+              <stringProp name="cacheKey"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">if(vars.get(&quot;hostUrl&quot;)==&quot;master-staging.intellify.io&quot;){
+	var orgUUID = &quot;58f8468d625e62543e53b5af&quot;;
+}
+
+if(vars.get(&quot;hostUrl&quot;)==&quot;master-staging2.intellify.io&quot;){
+	var orgUUID = &quot;58e47a7a625e6252d4c1e2b0&quot;;
+}
+
+if(vars.get(&quot;hostUrl&quot;)==&quot;master-staging3.intellify.io&quot;){
+	var orgUUID = &quot;58de287e625e62303b6d7bad&quot;;
+}
+
+if(vars.get(&quot;hostUrl&quot;)==&quot;master-dev.intellify.io&quot;){
+	var orgUUID = &quot;58e47d4b36f7e8700335c8cc&quot;;
+}
+
+vars.put(&quot;orgUUID&quot;,orgUUID);</stringProp>
+              <stringProp name="scriptLanguage">javascript</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="DC_Id Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">parentDataCollectionIdVar</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..parentDataCollectionId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="APIkey Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">apiKey</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..apiKeyUrlSafeString</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+              <stringProp name="BeanShellAssertion.query">props.put(&quot;apiKey&quot;,vars.get(&quot;apiKey&quot;));</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Collect  DC info request" enabled="false">
+            <boolProp name="WAITING">true</boolProp>
+            <boolProp name="SUCCESFULL">true</boolProp>
+            <stringProp name="RESPONSE_CODE">200</stringProp>
+            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+            <stringProp name="REQUEST_DATA"></stringProp>
+            <stringProp name="RESPONSE_DATA">${dataCollectionName}_${count},${apiKey},${parentDataCollectionIdVar}</stringProp>
+            <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+            <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+            <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          </kg.apc.jmeter.samplers.DummySampler>
+          <hashTree>
+            <kg.apc.jmeter.reporters.FlexibleFileWriter guiclass="kg.apc.jmeter.reporters.FlexibleFileWriterGui" testclass="kg.apc.jmeter.reporters.FlexibleFileWriter" testname="Collect Uuid" enabled="true">
+              <stringProp name="filename">${path}datacollection.csv</stringProp>
+              <stringProp name="columns">responseData|\r\n</stringProp>
+              <boolProp name="overwrite">false</boolProp>
+              <stringProp name="header">dataCollectionName,apiKey,parentDataCollectionIdVar</stringProp>
+              <stringProp name="footer"></stringProp>
+            </kg.apc.jmeter.reporters.FlexibleFileWriter>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pause" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">5000</stringProp>
+        </TestAction>
+        <hashTree/>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Data Source Loop" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">${noOfDS}</stringProp>
+        </LoopController>
+        <hashTree>
+          <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="NoOfDataSourceCounter" enabled="true">
+            <stringProp name="CounterConfig.start">1</stringProp>
+            <stringProp name="CounterConfig.end">${noOfDS}</stringProp>
+            <stringProp name="CounterConfig.incr">1</stringProp>
+            <stringProp name="CounterConfig.name">count</stringProp>
+            <stringProp name="CounterConfig.format"></stringProp>
+            <boolProp name="CounterConfig.per_user">false</boolProp>
+          </CounterConfig>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create Data Source" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parentDataCollectionId&quot;: &quot;${parentDataCollectionIdVar}&quot;,&#xd;
+	&quot;parentDataCollectionLabel&quot;: &quot;${dataCollectionName}_${count}&quot;,&#xd;
+	&quot;allowNullSensorId&quot;: false,&#xd;
+	&quot;active&quot;: true,&#xd;
+	&quot;sharedSecret&quot;: &quot;e8365196-2e1e-4b77-4508-b90bb9${__RandomString(6,abcdwxyz${__Random(1,99,)},)}&quot;,&#xd;
+	&quot;name&quot;: &quot;${dataSourceName}_${count}&quot;,&#xd;
+	&quot;sensorId&quot;: &quot;${sensorId}.${count}&quot;,&#xd;
+	&quot;rawEventStreamName&quot;: &quot;${eventId}-${count}&quot;,&#xd;
+	&quot;rawDescribeStreamName&quot;: &quot;${entityId}-${count}&quot;,&#xd;
+	&quot;trustLevel&quot;: &quot;OWN_SENSOR_ONLY&quot;,&#xd;
+	&quot;sensorType&quot;: &quot;CUSTOM_JAVASCRIPT_SENSOR&quot;,&#xd;
+	&quot;type&quot;: &quot;INTELLIFY_DATASOURCE&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/datasource</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${__P(password1,)}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="dataSourceUUID Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">dataSourceUUIDVar</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">uuid</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Collect DS info request" enabled="false">
+            <boolProp name="WAITING">true</boolProp>
+            <boolProp name="SUCCESFULL">true</boolProp>
+            <stringProp name="RESPONSE_CODE">200</stringProp>
+            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+            <stringProp name="REQUEST_DATA"></stringProp>
+            <stringProp name="RESPONSE_DATA">${dataSourceName}_${count},${dataSourceUUIDVar}</stringProp>
+            <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+            <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+            <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          </kg.apc.jmeter.samplers.DummySampler>
+          <hashTree>
+            <kg.apc.jmeter.reporters.FlexibleFileWriter guiclass="kg.apc.jmeter.reporters.FlexibleFileWriterGui" testclass="kg.apc.jmeter.reporters.FlexibleFileWriter" testname="Collect DS info" enabled="true">
+              <stringProp name="filename">${path}datasource.csv</stringProp>
+              <stringProp name="columns">responseData|\r\n</stringProp>
+              <boolProp name="overwrite">false</boolProp>
+              <stringProp name="header">dataSourceName,dataSourceUUIDVar
+</stringProp>
+              <stringProp name="footer"></stringProp>
+            </kg.apc.jmeter.reporters.FlexibleFileWriter>
+            <hashTree/>
+          </hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pause" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">5000</stringProp>
+          </TestAction>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create computed stream 2.0 - No operator" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;active&quot;: true,&#xd;
+	&quot;name&quot;: &quot;${computedStream}-${count}&quot;,&#xd;
+	&quot;intellistreamJobSpec&quot;: {&#xd;
+		&quot;jobClass&quot;: &quot;com.intellify.jobs.datacollection.AggregationJob&quot;,&#xd;
+		&quot;outputCollection&quot;: &quot;${computedStream}-${count}-output&quot;,&#xd;
+		&quot;outputStored&quot;: false,&#xd;
+		&quot;outputIndexed&quot;: true,&#xd;
+		&quot;outputPropagated&quot;: true,&#xd;
+		&quot;usePartialUpsert&quot;: false,&#xd;
+		&quot;cursorBatchSize&quot;: 100,&#xd;
+		&quot;parentDataCollectionId&quot;: &quot;&quot;,&#xd;
+		&quot;timeSlice&quot;: &quot;&quot;,&#xd;
+		&quot;pipelineSpec&quot;: {&#xd;
+			&quot;primaryStream&quot;: &quot;${eventId}-${count}-eventdata-${dataSourceUUIDVar}&quot;,&#xd;
+			&quot;processingSpecs&quot;: []&#xd;
+		},&#xd;
+		&quot;specVersion&quot;: 2,&#xd;
+		&quot;computeLogicClass&quot;: &quot;com.intellify.jobs.tasks.aggregation.PipelineComputeLogic&quot;&#xd;
+	},&#xd;
+	&quot;pipelineOperationType&quot;: &quot;compute&quot;,&#xd;
+	&quot;parentDataCollectionId&quot;: &quot;${parentDataCollectionIdVar}&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/intellistream</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="TestPlan.comments">No operator</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${__P(password1,)}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="computedStreamUUID Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">computedStreamUUIDVar</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">uuid</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create computed stream 2.0 - sort operator" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;active&quot;: true,&#xd;
+  &quot;name&quot;: &quot;${computedStream}-${count}&quot;,&#xd;
+  &quot;intellistreamJobSpec&quot;: {&#xd;
+    &quot;jobClass&quot;: &quot;com.intellify.jobs.datacollection.AggregationJob&quot;,&#xd;
+    &quot;outputCollection&quot;: &quot;${computedStream}-${count}-output&quot;,&#xd;
+    &quot;outputStored&quot;: false,&#xd;
+    &quot;outputIndexed&quot;: true,&#xd;
+    &quot;outputPropagated&quot;: true,&#xd;
+    &quot;usePartialUpsert&quot;: false,&#xd;
+    &quot;cursorBatchSize&quot;: 100,&#xd;
+    &quot;parentDataCollectionId&quot;: &quot;&quot;,&#xd;
+    &quot;timeSlice&quot;: &quot;&quot;,&#xd;
+    &quot;pipelineSpec&quot;: {&#xd;
+      &quot;primaryStream&quot;: &quot;${eventId}-${count}-eventdata-${dataSourceUUIDVar}&quot;,&#xd;
+      &quot;processingSpecs&quot;: [&#xd;
+        {&#xd;
+          &quot;type&quot;: &quot;SortSpec&quot;,&#xd;
+          &quot;sortKeys&quot;: [&#xd;
+            {&#xd;
+              &quot;sortField&quot;: &quot;apiKey&quot;,&#xd;
+              &quot;order&quot;: 1&#xd;
+            }&#xd;
+          ]&#xd;
+        }&#xd;
+      ]&#xd;
+    },&#xd;
+    &quot;specVersion&quot;: 2,&#xd;
+    &quot;computeLogicClass&quot;: &quot;com.intellify.jobs.tasks.aggregation.PipelineComputeLogic&quot;&#xd;
+  },&#xd;
+  &quot;pipelineOperationType&quot;: &quot;compute&quot;,&#xd;
+  &quot;parentDataCollectionId&quot;: &quot;${parentDataCollectionIdVar}&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/intellistream</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="TestPlan.comments">No operator</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${__P(password1,)}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="computedStreamUUID Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">computedStreamUUIDVar</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">uuid</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create computed stream 2.0 - Rename operator" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;active&quot;: true,&#xd;
+  &quot;name&quot;: &quot;${computedStream}-${count}&quot;,&#xd;
+  &quot;intellistreamJobSpec&quot;: {&#xd;
+    &quot;jobClass&quot;: &quot;com.intellify.jobs.datacollection.AggregationJob&quot;,&#xd;
+    &quot;outputCollection&quot;: &quot;${computedStream}-${count}-output&quot;,&#xd;
+    &quot;outputStored&quot;: false,&#xd;
+    &quot;outputIndexed&quot;: true,&#xd;
+    &quot;outputPropagated&quot;: true,&#xd;
+    &quot;usePartialUpsert&quot;: false,&#xd;
+    &quot;cursorBatchSize&quot;: 100,&#xd;
+    &quot;parentDataCollectionId&quot;: &quot;&quot;,&#xd;
+    &quot;timeSlice&quot;: &quot;&quot;,&#xd;
+    &quot;pipelineSpec&quot;: {&#xd;
+      &quot;primaryStream&quot;: &quot;${eventId}-${count}-eventdata-${dataSourceUUIDVar}&quot;,&#xd;
+      &quot;processingSpecs&quot;: [&#xd;
+        {&#xd;
+          &quot;type&quot;: &quot;ReshapeSpec&quot;,&#xd;
+          &quot;includeFields&quot;: [],&#xd;
+          &quot;renameFields&quot;: {&#xd;
+            &quot;newFieldName&quot;: &quot;$accountId&quot;&#xd;
+          },&#xd;
+          &quot;computedFields&quot;: {}&#xd;
+        }&#xd;
+      ]&#xd;
+    },&#xd;
+    &quot;specVersion&quot;: 2,&#xd;
+    &quot;computeLogicClass&quot;: &quot;com.intellify.jobs.tasks.aggregation.PipelineComputeLogic&quot;&#xd;
+  },&#xd;
+  &quot;pipelineOperationType&quot;: &quot;compute&quot;,&#xd;
+  &quot;parentDataCollectionId&quot;: &quot;${parentDataCollectionIdVar}&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/intellistream</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="TestPlan.comments">No operator</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${__P(password1,)}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="computedStreamUUID Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">computedStreamUUIDVar</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">uuid</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create computed stream 2.0 - Filter operator" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;active&quot;: true,&#xd;
+  &quot;name&quot;: &quot;${computedStream}-${count}&quot;,&#xd;
+  &quot;intellistreamJobSpec&quot;: {&#xd;
+    &quot;jobClass&quot;: &quot;com.intellify.jobs.datacollection.AggregationJob&quot;,&#xd;
+    &quot;outputCollection&quot;: &quot;${computedStream}-${count}-output&quot;,&#xd;
+    &quot;outputStored&quot;: false,&#xd;
+    &quot;outputIndexed&quot;: true,&#xd;
+    &quot;outputPropagated&quot;: true,&#xd;
+    &quot;usePartialUpsert&quot;: false,&#xd;
+    &quot;cursorBatchSize&quot;: 100,&#xd;
+    &quot;parentDataCollectionId&quot;: &quot;&quot;,&#xd;
+    &quot;timeSlice&quot;: &quot;&quot;,&#xd;
+    &quot;pipelineSpec&quot;: {&#xd;
+      &quot;primaryStream&quot;: &quot;${eventId}-${count}-eventdata-${dataSourceUUIDVar}&quot;,&#xd;
+      &quot;processingSpecs&quot;: [&#xd;
+        {&#xd;
+          &quot;type&quot;: &quot;FilterSpec&quot;,&#xd;
+          &quot;stringFilters&quot;: [&#xd;
+            {&#xd;
+              &quot;key&quot;: &quot;event.actor.iType&quot;,&#xd;
+              &quot;values&quot;: [&#xd;
+                &quot;Person&quot;&#xd;
+              ]&#xd;
+            }&#xd;
+          ],&#xd;
+          &quot;numberFilters&quot;: [],&#xd;
+          &quot;boolFilters&quot;: [],&#xd;
+          &quot;rangeFilters&quot;: []&#xd;
+        }&#xd;
+      ]&#xd;
+    },&#xd;
+    &quot;specVersion&quot;: 2,&#xd;
+    &quot;computeLogicClass&quot;: &quot;com.intellify.jobs.tasks.aggregation.PipelineComputeLogic&quot;&#xd;
+  },&#xd;
+  &quot;pipelineOperationType&quot;: &quot;compute&quot;,&#xd;
+  &quot;parentDataCollectionId&quot;: &quot;${parentDataCollectionIdVar}&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/intellistream</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="TestPlan.comments">No operator</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${__P(password1,)}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="computedStreamUUID Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">computedStreamUUIDVar</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">uuid</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create computed stream 2.0 - Join operator" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;active&quot;: true,&#xd;
+  &quot;name&quot;: &quot;${computedStream}-${count}&quot;,&#xd;
+  &quot;intellistreamJobSpec&quot;: {&#xd;
+    &quot;jobClass&quot;: &quot;com.intellify.jobs.datacollection.AggregationJob&quot;,&#xd;
+    &quot;outputCollection&quot;: &quot;${computedStream}-${count}-output&quot;,&#xd;
+    &quot;outputStored&quot;: false,&#xd;
+    &quot;outputIndexed&quot;: true,&#xd;
+    &quot;outputPropagated&quot;: true,&#xd;
+    &quot;usePartialUpsert&quot;: false,&#xd;
+    &quot;cursorBatchSize&quot;: 100,&#xd;
+    &quot;parentDataCollectionId&quot;: &quot;&quot;,&#xd;
+    &quot;timeSlice&quot;: &quot;&quot;,&#xd;
+    &quot;pipelineSpec&quot;: {&#xd;
+      &quot;primaryStream&quot;: &quot;${eventId}-${count}-eventdata-${dataSourceUUIDVar}&quot;,&#xd;
+      &quot;processingSpecs&quot;: [&#xd;
+        {&#xd;
+          &quot;type&quot;: &quot;FilterSpec&quot;,&#xd;
+          &quot;stringFilters&quot;: [&#xd;
+            {&#xd;
+              &quot;key&quot;: &quot;event.actor.iType&quot;,&#xd;
+              &quot;values&quot;: [&#xd;
+                &quot;Person&quot;&#xd;
+              ]&#xd;
+            }&#xd;
+          ],&#xd;
+          &quot;numberFilters&quot;: [],&#xd;
+          &quot;boolFilters&quot;: [],&#xd;
+          &quot;rangeFilters&quot;: []&#xd;
+        }&#xd;
+      ]&#xd;
+    },&#xd;
+    &quot;specVersion&quot;: 2,&#xd;
+    &quot;computeLogicClass&quot;: &quot;com.intellify.jobs.tasks.aggregation.PipelineComputeLogic&quot;&#xd;
+  },&#xd;
+  &quot;pipelineOperationType&quot;: &quot;compute&quot;,&#xd;
+  &quot;parentDataCollectionId&quot;: &quot;${parentDataCollectionIdVar}&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/intellistream</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="TestPlan.comments">No operator</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${__P(password1,)}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="computedStreamUUID Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">computedStreamUUIDVar</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">uuid</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create computed stream 2.0 - Aggregate(Group) operator" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;active&quot;: true,&#xd;
+  &quot;name&quot;: &quot;${computedStream}-${count}&quot;,&#xd;
+  &quot;intellistreamJobSpec&quot;: {&#xd;
+    &quot;jobClass&quot;: &quot;com.intellify.jobs.datacollection.AggregationJob&quot;,&#xd;
+    &quot;outputCollection&quot;: &quot;${computedStream}-${count}-output&quot;,&#xd;
+    &quot;outputStored&quot;: false,&#xd;
+    &quot;outputIndexed&quot;: true,&#xd;
+    &quot;outputPropagated&quot;: true,&#xd;
+    &quot;usePartialUpsert&quot;: false,&#xd;
+    &quot;cursorBatchSize&quot;: 100,&#xd;
+    &quot;parentDataCollectionId&quot;: &quot;&quot;,&#xd;
+    &quot;timeSlice&quot;: &quot;&quot;,&#xd;
+    &quot;pipelineSpec&quot;: {&#xd;
+      &quot;primaryStream&quot;: &quot;${eventId}-${count}-eventdata-${dataSourceUUIDVar}&quot;,&#xd;
+      &quot;processingSpecs&quot;: [&#xd;
+        {&#xd;
+          &quot;type&quot;: &quot;GroupSpec&quot;,&#xd;
+          &quot;groupFields&quot;: {&#xd;
+            &quot;timestampISO&quot;: &quot;timestampISO&quot;&#xd;
+          },&#xd;
+          &quot;groupFunctions&quot;: [&#xd;
+            {&#xd;
+              &quot;computedField&quot;: &quot;computedField&quot;,&#xd;
+              &quot;accumulator&quot;: &quot;max&quot;,&#xd;
+              &quot;expression&quot;: {&#xd;
+                &quot;field&quot;: &quot;$apiKey&quot;,&#xd;
+                &quot;_type&quot;: &quot;field&quot;&#xd;
+              }&#xd;
+            }&#xd;
+          ]&#xd;
+        }&#xd;
+      ]&#xd;
+    },&#xd;
+    &quot;specVersion&quot;: 2,&#xd;
+    &quot;computeLogicClass&quot;: &quot;com.intellify.jobs.tasks.aggregation.PipelineComputeLogic&quot;&#xd;
+  },&#xd;
+  &quot;pipelineOperationType&quot;: &quot;compute&quot;,&#xd;
+  &quot;parentDataCollectionId&quot;: &quot;${parentDataCollectionIdVar}&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/intellistream</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="TestPlan.comments">No operator</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${__P(password1,)}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="computedStreamUUID Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">computedStreamUUIDVar</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">uuid</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create computed stream 2.0 - Computed(Reshape) operator" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;active&quot;: true,&#xd;
+  &quot;name&quot;: &quot;${computedStream}-${count}&quot;,&#xd;
+  &quot;intellistreamJobSpec&quot;: {&#xd;
+    &quot;jobClass&quot;: &quot;com.intellify.jobs.datacollection.AggregationJob&quot;,&#xd;
+    &quot;outputCollection&quot;: &quot;${computedStream}-${count}-output&quot;,&#xd;
+    &quot;outputStored&quot;: false,&#xd;
+    &quot;outputIndexed&quot;: true,&#xd;
+    &quot;outputPropagated&quot;: true,&#xd;
+    &quot;usePartialUpsert&quot;: false,&#xd;
+    &quot;cursorBatchSize&quot;: 100,&#xd;
+    &quot;parentDataCollectionId&quot;: &quot;&quot;,&#xd;
+    &quot;timeSlice&quot;: &quot;&quot;,&#xd;
+    &quot;pipelineSpec&quot;: {&#xd;
+      &quot;primaryStream&quot;: &quot;${eventId}-${count}-eventdata-${dataSourceUUIDVar}&quot;,&#xd;
+      &quot;processingSpecs&quot;: [&#xd;
+        {&#xd;
+          &quot;type&quot;: &quot;ReshapeSpec&quot;,&#xd;
+          &quot;includeFields&quot;: [],&#xd;
+          &quot;renameFields&quot;: {},&#xd;
+          &quot;computedFields&quot;: {&#xd;
+            &quot;computedField&quot;: {&#xd;
+              &quot;lt&quot;: [&#xd;
+                &quot;$event.actor.dateCreated&quot;,&#xd;
+                &quot;$event.actor.dateModified&quot;&#xd;
+              ]&#xd;
+            }&#xd;
+          }&#xd;
+        }&#xd;
+      ]&#xd;
+    },&#xd;
+    &quot;specVersion&quot;: 2,&#xd;
+    &quot;computeLogicClass&quot;: &quot;com.intellify.jobs.tasks.aggregation.PipelineComputeLogic&quot;&#xd;
+  },&#xd;
+  &quot;pipelineOperationType&quot;: &quot;compute&quot;,&#xd;
+  &quot;parentDataCollectionId&quot;: &quot;${parentDataCollectionIdVar}&quot;&#xd;
+}{&#xd;
+  &quot;active&quot;: true,&#xd;
+  &quot;name&quot;: &quot;${computedStream}-${count}&quot;,&#xd;
+  &quot;intellistreamJobSpec&quot;: {&#xd;
+    &quot;jobClass&quot;: &quot;com.intellify.jobs.datacollection.AggregationJob&quot;,&#xd;
+    &quot;outputCollection&quot;: &quot;${computedStream}-${count}-output&quot;,&#xd;
+    &quot;outputStored&quot;: false,&#xd;
+    &quot;outputIndexed&quot;: true,&#xd;
+    &quot;outputPropagated&quot;: true,&#xd;
+    &quot;usePartialUpsert&quot;: false,&#xd;
+    &quot;cursorBatchSize&quot;: 100,&#xd;
+    &quot;parentDataCollectionId&quot;: &quot;&quot;,&#xd;
+    &quot;timeSlice&quot;: &quot;&quot;,&#xd;
+    &quot;pipelineSpec&quot;: {&#xd;
+      &quot;primaryStream&quot;: &quot;${eventId}-${count}-eventdata-${dataSourceUUIDVar}&quot;,&#xd;
+      &quot;processingSpecs&quot;: [&#xd;
+        {&#xd;
+          &quot;type&quot;: &quot;ReshapeSpec&quot;,&#xd;
+          &quot;includeFields&quot;: [],&#xd;
+          &quot;renameFields&quot;: {},&#xd;
+          &quot;computedFields&quot;: {&#xd;
+            &quot;computedField&quot;: {&#xd;
+              &quot;lt&quot;: [&#xd;
+                &quot;$event.actor.dateCreated&quot;,&#xd;
+                &quot;$event.actor.dateModified&quot;&#xd;
+              ]&#xd;
+            }&#xd;
+          }&#xd;
+        }&#xd;
+      ]&#xd;
+    },&#xd;
+    &quot;specVersion&quot;: 2,&#xd;
+    &quot;computeLogicClass&quot;: &quot;com.intellify.jobs.tasks.aggregation.PipelineComputeLogic&quot;&#xd;
+  },&#xd;
+  &quot;pipelineOperationType&quot;: &quot;compute&quot;,&#xd;
+  &quot;parentDataCollectionId&quot;: &quot;${parentDataCollectionIdVar}&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/intellistream</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="TestPlan.comments">No operator</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${__P(password1,)}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="computedStreamUUID Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">computedStreamUUIDVar</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">uuid</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pause" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">5000</stringProp>
+          </TestAction>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Start Computed stream" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/intellistream/${computedStreamUUIDVar}/start</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${__P(password1,)}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pause" enabled="false">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">5000</stringProp>
+        </TestAction>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create computed stream 2.0 - With 5 operator" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;active&quot;: true,&#xd;
+	&quot;name&quot;: &quot;${computedStream}&quot;,&#xd;
+	&quot;intellistreamJobSpec&quot;: {&#xd;
+		&quot;jobClass&quot;: &quot;com.intellify.jobs.datacollection.AggregationJob&quot;,&#xd;
+		&quot;outputCollection&quot;: &quot;${computedStream}-output&quot;,&#xd;
+		&quot;outputStored&quot;: false,&#xd;
+		&quot;outputIndexed&quot;: true,&#xd;
+		&quot;outputPropagated&quot;: true,&#xd;
+		&quot;usePartialUpsert&quot;: false,&#xd;
+		&quot;cursorBatchSize&quot;: 100,&#xd;
+		&quot;parentDataCollectionId&quot;: &quot;&quot;,&#xd;
+		&quot;timeSlice&quot;: &quot;&quot;,&#xd;
+		&quot;pipelineSpec&quot;: {&#xd;
+			&quot;primaryStream&quot;: &quot;${eventId}-1-eventdata-${dataSourceUUIDVar}&quot;,&#xd;
+			&quot;processingSpecs&quot;: []&#xd;
+		},&#xd;
+		&quot;specVersion&quot;: 2,&#xd;
+		&quot;computeLogicClass&quot;: &quot;com.intellify.jobs.tasks.aggregation.PipelineComputeLogic&quot;&#xd;
+	},&#xd;
+	&quot;pipelineOperationType&quot;: &quot;compute&quot;,&#xd;
+	&quot;parentDataCollectionId&quot;: &quot;${parentDataCollectionIdVar}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/intellistream</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="TestPlan.comments">5 Operator - </stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__P(password1,)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="computedStreamUUID Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">computedStreamUUIDVar</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">uuid</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">NULL</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pause" enabled="false">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">5000</stringProp>
+        </TestAction>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Collector Test" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Test Scenario - Collector Test" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threads,100)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(rampup,60)}</stringProp>
+        <longProp name="ThreadGroup.start_time">1469800513000</longProp>
+        <longProp name="ThreadGroup.end_time">1469792214000</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">${__P(duration,3660)}</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add event " enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;apiKey&quot;: &quot;${__P(apiKey,)}&quot;,    &#xd;
+    &quot;sensorId&quot;: &quot;${sensorId}.${count}&quot;,    &#xd;
+    &quot;event&quot;: {&#xd;
+      &quot;iType&quot;: &quot;AnnotationEvent&quot;,&#xd;
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1/Context&quot;,&#xd;
+      &quot;@type&quot;: &quot;http://purl.imsglobal.org/caliper/v1/AnnotationEvent&quot;,&#xd;
+      &quot;actor&quot;: {&#xd;
+        &quot;iType&quot;: &quot;Person&quot;,&#xd;
+        &quot;@id&quot;: &quot;${actorId}_${__threadNum}&quot;,&#xd;
+        &quot;@type&quot;: &quot;http://purl.imsglobal.org/caliper/v1/lis/Person&quot;,&#xd;
+        &quot;name&quot;: &quot;Ins${__threadNum}&quot;,&#xd;
+        &quot;dateModified&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;firstName&quot;: null,&#xd;
+        &quot;lastName&quot;: null,&#xd;
+        &quot;email&quot;: null,&#xd;
+        &quot;roles&quot;: [],&#xd;
+        &quot;description&quot;: &quot;Actor is Instructor&quot;,&#xd;
+        &quot;properties&quot;: null,&#xd;
+        &quot;extensions&quot;: null,&#xd;
+        &quot;dateCreated&quot;: &quot;${__time(/1000)}&quot;&#xd;
+      },&#xd;
+      &quot;action&quot;: &quot;http://purl.imsglobal.org/vocab/caliper/v1/action#Tagged&quot;,&#xd;
+      &quot;object&quot;: {&#xd;
+        &quot;@id&quot;: &quot;https://example.com/viewer/book/79405870#epubcfi(/4/3/1)&quot;,&#xd;
+        &quot;@type&quot;: &quot;http://purl.imsglobal.org/caliper/v1/Frame&quot;,&#xd;
+        &quot;name&quot;: &quot;iframe&quot;,&#xd;
+        &quot;objectType&quot;: null,&#xd;
+        &quot;alignedLearningObjective&quot;: null,&#xd;
+        &quot;dateCreated&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;dateModified&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;index&quot;: 14,&#xd;
+        &quot;description&quot;: null,&#xd;
+        &quot;properties&quot;: null,&#xd;
+        &quot;extensions&quot;: null,&#xd;
+        &quot;keywords&quot;: null,&#xd;
+        &quot;isPartOf&quot;: null,&#xd;
+        &quot;author&quot;: &quot;David G.&quot;,&#xd;
+        &quot;datePublished&quot;: 0&#xd;
+      },&#xd;
+      &quot;target&quot;: null,&#xd;
+      &quot;generated&quot;: null,&#xd;
+      &quot;startedAtTime&quot;: 0,&#xd;
+      &quot;endedAtTime&quot;: 0,&#xd;
+      &quot;duration&quot;: null,&#xd;
+      &quot;edApp&quot;: {&#xd;
+        &quot;iType&quot;: &quot;SoftwareApplication&quot;,&#xd;
+        &quot;@id&quot;: &quot;https://example.com/super-assessment-tool&quot;,&#xd;
+        &quot;@type&quot;: &quot;http://purl.imsglobal.org/caliper/v1/SoftwareApplication&quot;,&#xd;
+        &quot;name&quot;: null,&#xd;
+        &quot;dateModified&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;description&quot;: null,&#xd;
+        &quot;properties&quot;: null,&#xd;
+        &quot;extensions&quot;: null,&#xd;
+        &quot;dateCreated&quot;: &quot;${__time(/1000)}&quot;&#xd;
+      },&#xd;
+      &quot;group&quot;: {&#xd;
+        &quot;iType&quot;: &quot;Organization&quot;,&#xd;
+        &quot;@id&quot;: &quot;GroupId&quot;,&#xd;
+        &quot;@type&quot;: &quot;http://purl.imsglobal.org/caliper/v1/lis/Group&quot;,&#xd;
+        &quot;name&quot;: null,&#xd;
+        &quot;parentOrg&quot;: null,&#xd;
+        &quot;dateCreated&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;dateModified&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;description&quot;: null,&#xd;
+        &quot;properties&quot;: null,&#xd;
+        &quot;extensions&quot;: null&#xd;
+      },&#xd;
+      &quot;eventTime&quot;: ${__javaScript(new Date().getTime();)}&#xd;
+    }&#xd;
+  }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1custom/eventdata</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="collect total event count" enabled="true">
+            <stringProp name="scriptLanguage">javascript</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey"></stringProp>
+            <stringProp name="script">${__counter(FALSE, totalEventRequestCount)};
+props.put(&quot;totalEventRequestCount&quot;,vars.get(&quot;totalEventRequestCount&quot;));</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add entity" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;apiKey&quot;: &quot;${__P(apiKey,)}&quot;,&#xd;
+    &quot;sensorId&quot;: &quot;${sensorId}.${count}&quot;,&#xd;
+    &quot;entity&quot;: {&#xd;
+      &quot;iType&quot;: &quot;AnnotationEvent&quot;,&#xd;
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1/Context&quot;,&#xd;
+      &quot;@type&quot;: &quot;http://purl.imsglobal.org/caliper/v1/AnnotationEvent&quot;,&#xd;
+      &quot;actor&quot;: {&#xd;
+        &quot;iType&quot;: &quot;Person&quot;,&#xd;
+        &quot;@id&quot;: &quot;${actorId}_${__threadNum}&quot;,&#xd;
+        &quot;@type&quot;: &quot;http://purl.imsglobal.org/caliper/v1/lis/Person&quot;,&#xd;
+        &quot;name&quot;: &quot;Ins${__threadNum}&quot;,&#xd;
+        &quot;dateModified&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;firstName&quot;: null,&#xd;
+        &quot;lastName&quot;: null,&#xd;
+        &quot;email&quot;: null,&#xd;
+        &quot;roles&quot;: [],&#xd;
+        &quot;description&quot;: &quot;Actor is Instructor&quot;,&#xd;
+        &quot;properties&quot;: null,&#xd;
+        &quot;extensions&quot;: null,&#xd;
+        &quot;dateCreated&quot;: &quot;${__time(/1000)}&quot;&#xd;
+      },&#xd;
+      &quot;action&quot;: &quot;http://purl.imsglobal.org/vocab/caliper/v1/action#Tagged&quot;,&#xd;
+      &quot;object&quot;: {&#xd;
+        &quot;@id&quot;: &quot;https://example.com/viewer/book/79405870#epubcfi(/4/3/1)&quot;,&#xd;
+        &quot;@type&quot;: &quot;http://purl.imsglobal.org/caliper/v1/Frame&quot;,&#xd;
+        &quot;name&quot;: &quot;iframe&quot;,&#xd;
+        &quot;objectType&quot;: null,&#xd;
+        &quot;alignedLearningObjective&quot;: null,&#xd;
+        &quot;dateCreated&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;dateModified&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;index&quot;: 14,&#xd;
+        &quot;description&quot;: null,&#xd;
+        &quot;properties&quot;: null,&#xd;
+        &quot;extensions&quot;: null,&#xd;
+        &quot;keywords&quot;: null,&#xd;
+        &quot;isPartOf&quot;: null,&#xd;
+        &quot;author&quot;: &quot;David G.&quot;,&#xd;
+        &quot;datePublished&quot;: 0&#xd;
+      },&#xd;
+      &quot;target&quot;: null,&#xd;
+      &quot;generated&quot;: null,&#xd;
+      &quot;startedAtTime&quot;: 0,&#xd;
+      &quot;endedAtTime&quot;: 0,&#xd;
+      &quot;duration&quot;: null,&#xd;
+      &quot;edApp&quot;: {&#xd;
+        &quot;iType&quot;: &quot;SoftwareApplication&quot;,&#xd;
+        &quot;@id&quot;: &quot;https://example.com/super-assessment-tool&quot;,&#xd;
+        &quot;@type&quot;: &quot;http://purl.imsglobal.org/caliper/v1/SoftwareApplication&quot;,&#xd;
+        &quot;name&quot;: null,&#xd;
+        &quot;dateModified&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;description&quot;: null,&#xd;
+        &quot;properties&quot;: null,&#xd;
+        &quot;extensions&quot;: null,&#xd;
+        &quot;dateCreated&quot;: &quot;${__time(/1000)}&quot;&#xd;
+      },&#xd;
+      &quot;group&quot;: {&#xd;
+        &quot;iType&quot;: &quot;Organization&quot;,&#xd;
+        &quot;@id&quot;: &quot;GroupId&quot;,&#xd;
+        &quot;@type&quot;: &quot;http://purl.imsglobal.org/caliper/v1/lis/Group&quot;,&#xd;
+        &quot;name&quot;: null,&#xd;
+        &quot;parentOrg&quot;: null,&#xd;
+        &quot;dateCreated&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;dateModified&quot;: &quot;${__time(/1000)}&quot;,&#xd;
+        &quot;description&quot;: null,&#xd;
+        &quot;properties&quot;: null,&#xd;
+        &quot;extensions&quot;: null&#xd;
+      },&#xd;
+      &quot;eventTime&quot;: 14927546020${__time(/100000000000)}&#xd;
+    }&#xd;
+  }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1custom/entitydata</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="collect total entity count" enabled="true">
+            <stringProp name="scriptLanguage">javascript</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey"></stringProp>
+            <stringProp name="script">${__counter(FALSE, totalEntityRequestCount)}
+props.put(&quot;totalEntityRequestCount&quot;,vars.get(&quot;totalEntityRequestCount&quot;));</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Processing Test" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1492758966000</longProp>
+        <longProp name="ThreadGroup.end_time">1492758966000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pause" enabled="false">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${pauseTimeForProcessing}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Verify Count from Workbench" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/intellisearch/_status?human=true&amp;recovery=false</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="rawStreamCount" enabled="true">
+            <stringProp name="VAR">rawStreamCount</stringProp>
+            <stringProp name="JSONPATH">.indices.${eventId}-${count}-eventdata-${dataSourceUUIDVar}.docs.num_docs</stringProp>
+            <stringProp name="DEFAULT">NULL</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="computedStreamCount" enabled="true">
+            <stringProp name="VAR">computedStreamCount</stringProp>
+            <stringProp name="JSONPATH">.indices.${computedStream}-${count}-output.docs.num_docs</stringProp>
+            <stringProp name="DEFAULT">NULL</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Verify counts from ES" enabled="false">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey"></stringProp>
+          <stringProp name="script">import com.mongodb.*  // import all the mongodb.* stuff
+import org.apache.jmeter.protocol.mongodb.config.MongoDBHolder;
+
+
+DB db = MongoDBHolder.getDBFromSource(&quot;10.80.37.42&quot;, &quot;master-staging&quot;, &quot;pkulshreshtha&quot;, &quot;Prank@003&quot;);
+int totalCountfrmDB = db.getCollection(&quot;&quot;).find({}).count({});
+
+SampleResult.setResponseData(totalCountfrmDB); // set JSR223 sampler response to &quot;totalCountfrmDB&quot;</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">5</stringProp>
+          <stringProp name="TestPlan.comments">1561082</stringProp>
+        </LoopController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Search  Request" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+&quot;query&quot;: {&#xd;
+  &quot;filtered&quot;: {&#xd;
+    &quot;filter&quot;: {&#xd;
+      &quot;bool&quot;: {&#xd;
+        &quot;must&quot;: [&#xd;
+        ]&#xd;
+      }&#xd;
+    }&#xd;
+  }&#xd;
+&#xd;
+},&#xd;
+&quot;size&quot;: ${sizeOfData},&#xd;
+&quot;from&quot;: ${__counter(TRUE,)}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/intellisearch/computed-26-04-2017-06-29-55-1-output/_search</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="false">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${__P(password1,)</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="timeStamp" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">T1</stringProp>
+              <stringProp name="RegexExtractor.regex">timestampISO&quot;:&quot;([0-9TZ:.-]+)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">Null</stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="lastProcessTime" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">T2</stringProp>
+              <stringProp name="RegexExtractor.regex">lastProcessedAtISO&quot;:&quot;([0-9TZ:.-]+)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">Null</stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="requestId" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">RequestId</stringProp>
+              <stringProp name="RegexExtractor.regex">_id&quot;:&quot;([0-9a-z-]+)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">Null</stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Calculate Avg" enabled="true">
+              <stringProp name="cacheKey"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">var timeDiffNew = (((new Date(vars.get(&quot;T2&quot;))).getTime())-((new Date(vars.get(&quot;T1&quot;))).getTime()));
+var timeDiffPrevs = parseInt(vars.get(&quot;timeDiffPrev&quot;));
+
+if(vars.get(&quot;timeDiffPrev&quot;)==0){
+	vars.put(&quot;timeDiffPrev&quot;,timeDiffNew);
+} else {
+	var add = timeDiffPrevs+parseInt(timeDiffNew);
+	vars.put(&quot;timeDiffPrev&quot;,add/2);
+}
+
+//prev.setLatency()
+log.info(&quot;timeDiffPrev : &quot;+vars.get(&quot;timeDiffPrev&quot;));
+
+</stringProp>
+              <stringProp name="scriptLanguage">javascript</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Delivery Test" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1488272570000</longProp>
+        <longProp name="ThreadGroup.end_time">1488272570000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Results" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1492758966000</longProp>
+        <longProp name="ThreadGroup.end_time">1492758966000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Results Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">true</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree>
+          <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="BeanShell Listener" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">log.Info(&quot;\n******************************\nResponse Data :\n\n&quot; + prev.getResponseDataAsString() + &quot;*****************************\n\n&quot;);
+
+//log.info(&quot;\n\nConfig variable : \nhostUrl : &quot; +vars.get(&quot;hostUrl&quot;)+ &quot;,\nusername : &quot; +vars.get(&quot;username&quot;)+ &quot;,\npasswordMain : &quot; +vars.get(&quot;passwordMain&quot;)+ &quot;,\norgUUID : &quot; +vars.get(&quot;orgUUID&quot;)+ &quot;,\ndataCollectionName : &quot; +vars.get(&quot;dataCollectionName&quot;)+ &quot;,\ndataSourceName : &quot; +vars.get(&quot;dataSourceName&quot;)+ &quot;,\nnoOfDC : &quot; +vars.get(&quot;noOfDC&quot;)+ &quot;,\nnoOfDS : &quot; +vars.get(&quot;noOfDS&quot;)+ &quot;,\nsensorId : &quot; +vars.get(&quot;sensorId&quot;)+ &quot;,\neventId : &quot; +vars.get(&quot;eventId&quot;)+ &quot;,\nentityId : &quot; +vars.get(&quot;entityId&quot;)+ &quot;,\nactorId : &quot; +vars.get(&quot;actorId&quot;)+ &quot;,\ncomputedStream : &quot; +vars.get(&quot;computedStream&quot;)+ &quot;,\nsizeOfData : &quot; +vars.get(&quot;sizeOfData&quot;)+ &quot;,\ntimeDiffPrev : &quot; +vars.get(&quot;timeDiffPrev&quot;)+ &quot;,\npath : &quot; +vars.get(&quot;path&quot;)+ &quot;,\ntimeStamp : &quot; +vars.get(&quot;timeStamp&quot;)+ &quot;,\ntotalNoOfRequest : &quot; +vars.get(&quot;totalNoOfRequest&quot;)+ &quot;,\ntotalEventRequestCount : &quot; +vars.get(&quot;totalEventRequestCount&quot;)+ &quot;,\nthreads : &quot; +vars.get(&quot;threads&quot;)+ &quot;,\nrampup : &quot; +vars.get(&quot;rampup&quot;)+ &quot;,\nduration : &quot; +vars.get(&quot;duration&quot;)+ &quot;,\nrawStreamCount : &quot; +vars.get(&quot;rawStreamCount&quot;)+ &quot;,\ncomputedStreamCount : &quot; +vars.get(&quot;computedStreamCount&quot;)+ &quot;,\npauseTimeForProcessing : &quot; +vars.get(&quot;pauseTimeForProcessing&quot;)+&quot;\n\n&quot;);</stringProp>
+          </BeanShellListener>
+          <hashTree/>
+          <kg.apc.jmeter.reporters.FlexibleFileWriter guiclass="kg.apc.jmeter.reporters.FlexibleFileWriterGui" testclass="kg.apc.jmeter.reporters.FlexibleFileWriter" testname="File Writer" enabled="false">
+            <stringProp name="filename">${path}testResult_${__time(dd-MM-yyyy-hh-mm-ss)}.csv</stringProp>
+            <stringProp name="columns">responseData|\r\n</stringProp>
+            <boolProp name="overwrite">false</boolProp>
+            <stringProp name="header">
+</stringProp>
+            <stringProp name="footer"></stringProp>
+          </kg.apc.jmeter.reporters.FlexibleFileWriter>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
